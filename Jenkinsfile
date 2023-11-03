@@ -1,28 +1,22 @@
-pipeline { 
+pipeline {
+    
+    agent any
 
-agent any
+    stages {
 
-stages {
-      stage ('SCM') {
-            steps {
-                 echo "git pull my code-1"
-                 echo "git pull my code-2"
-            }
-      }
+        stage ("Checkout from SCM") {
+             echo "git pull my-code-1"
 
-      stage ('Deploy') {
-            steps {
-                  echo "deploying my code"
-            }
+        }
 
-      }
+        stage ("Build") {
+             echo "build by maven"
+        }
 
-      stage ('Test') { 
-            steps {
-                  echo "test my final webapp"
-            }
-      }
+        stage ("Deploy") {
+             echo "deploy on dev"
+        }   
+    }
 
-}
 
 }
