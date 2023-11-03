@@ -2,7 +2,7 @@ pipeline {
 
 agent any
 
-Stages {
+stages {
       stage ('SCM') {
             steps {
                  echo "git pull my code-1"
@@ -10,7 +10,7 @@ Stages {
             }
       }
 
-      Stage ('Deploy') {
+      stage ('Deploy') {
             steps {
                   echo "deploying my code"
             }
