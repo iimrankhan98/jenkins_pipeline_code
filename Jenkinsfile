@@ -5,16 +5,19 @@ pipeline {
     stages {
 
         stage ("Checkout from SCM") {
-             echo "git pull my-code-1"
+          echo "git pull my-code-1"
 
         }
 
         stage ("Build") {
-             echo "build by maven"
+          echo "build by maven"
+        
         }
 
+
         stage ("Deploy") {
-             echo "deploy on dev"
+          echo "deploy on dev"
+        
         }   
     }
 
