@@ -1,25 +1,27 @@
 pipeline {
     
-    agent any
+agent any
 
-    stages {
-
-        stage ("Checkout from SCM") {
+stages {
+     
+     stage ("Checkout from SCM") {
           echo "git pull my-code-1"
 
-        }
-
-        stage ("Build") {
+     }
+     
+     stage ("Build") {
           echo "build by maven"
         
-        }
+     }
 
 
-        stage ("Deploy") {
+     stage ("Deploy") {
           echo "deploy on dev"
         
-        }   
-    }
+     }   
+    
+    
+}
 
 
 }
