@@ -1,27 +1,31 @@
 pipeline {
-    
-agent any
 
-stages {
-     
-     stage ("Checkout from SCM") {
-          echo "git pull my-code-1"
+     agent any
+
+     stages {
+
+          stage ('Check Out SCM') {
+               steps {
+                    echo "git pull mycode"
+               }
+               
+          }
+          stage ('Build') {
+               steps {
+                    echo "Build by maven"
+               }
+          }
+          stage ('Deploy to DEV?') {
+               steps {
+                    echo "deploy to dev env"
+               }
+          }
+          stage ('Deploy to QA?') {
+               steps {
+                    echo "deploy to qa env"
+               }
+          }
+
 
      }
-     
-     stage ("Build") {
-          echo "build by maven"
-        
-     }
-
-
-     stage ("Deploy") {
-          echo "deploy on dev"
-        
-     }   
-    
-    
-}
-
-
 }
