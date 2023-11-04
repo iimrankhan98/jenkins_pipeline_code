@@ -25,6 +25,12 @@ pipeline {
                     echo "deploy to qa env"
                }
           }
+          stage ('Cleanup Stage') {
+               steps {
+                    echo "Cleanup Step"
+                    cleanWs ()
+               }
+          }
 
 
      }
