@@ -1,37 +1,28 @@
-pipeline {
+pipeline { 
 
-     agent any
+agent any
 
-     stages {
+stages {
+      stage ('SCM') {
+            steps {
+                 echo "git pull my code-1"
+                 echo "git pull my code-2"
+            }
+      }
 
-          stage ('Check Out SCM') {
-               steps {
-                    echo "git pull mycode"
-               }
-               
-          }
-          stage ('Build') {
-               steps {
-                    echo "Build by maven"
-               }
-          }
-          stage ('Deploy to DEV?') {
-               steps {
-                    echo "deploy to dev env"
-               }
-          }
-          stage ('Deploy to QA?') {
-               steps {
-                    echo "deploy to qa env"
-               }
-          }
-         stage ('Cleanup Stage') {
-               steps {
-                    echo "Cleanup Step"
-                    cleanWs ()
-               }
-          }
+      stage ('Deploy') {
+            steps {
+                  echo "deploying my code"
+            }
 
+      }
 
-     }
+      stage ('Test') { 
+            steps {
+                  echo "test my final webapp"
+            }
+      }
+
+}
+
 }
